@@ -42,6 +42,12 @@ const List = ({ list, setList }: any) => {
         setList(getLocalStorage());
     };
 
+    const handleClearAllItems = () => {
+        const list: [] = [];
+        localStorage.setItem('list', JSON.stringify(list));
+        setList(getLocalStorage());
+    };
+
     return (
         <div className="mt-6 font-josefin shadow-2xl transition-all duration-300">
             {list &&
@@ -152,7 +158,7 @@ const List = ({ list, setList }: any) => {
                 <p>
                     {listQuantity} {listQuantity === 1 ? 'item' : 'items'}
                 </p>
-                <p className="cursor-pointer">
+                <p className="cursor-pointer" onClick={handleClearAllItems}>
                     Clear {listQuantity === 1 ? 'item' : 'items'}
                 </p>
             </footer>
