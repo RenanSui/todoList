@@ -1,9 +1,8 @@
 import getLocalStorage from './getLocalStorage';
-import { IList } from "./components/Todo";
 
 const editLocalStorage = (value: string, id: number) => {
     let newList: Object;
-    const list: IList[] = getLocalStorage();
+    const list = getLocalStorage();
 
     newList = list.map((item: any) =>
         item.id == id

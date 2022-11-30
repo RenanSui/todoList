@@ -1,9 +1,8 @@
 import getLocalStorage from './getLocalStorage';
-import { IList } from "./components/Todo";
 
 
 const editItemCheck = (id: number, checked: Boolean) => {
-    const list: IList[] = getLocalStorage();
+    const list = getLocalStorage();
 
     let newList = list.map((item: any) =>
         item.id == id
