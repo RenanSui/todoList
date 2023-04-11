@@ -1,8 +1,12 @@
+// packages
 import React, { useRef, useState } from 'react';
-import editItemCheck from '../editItemCheck';
+
+// components
+import removeFromLocalStorage from '../removeFromLocalStorage';
 import editLocalStorage from '../editLocalStorage';
 import getLocalStorage from '../getLocalStorage';
-import removeFromLocalStorage from '../removeFromLocalStorage';
+import editItemCheck from '../editItemCheck';
+
 
 const List = ({ list, setList }: any) => {
     const listQuantity = list ? list.length : 0;
@@ -49,7 +53,8 @@ const List = ({ list, setList }: any) => {
     };
 
     return (
-        <div className="mt-6 font-josefin shadow-2xl transition-all duration-300">
+        <section className="mt-6 font-josefin shadow-2xl transition-all duration-300">
+            <h1 className='hidden'>Todo List</h1>
             {list &&
                 list.map((item: any) =>
                     editing && editingId == item.id ? (
@@ -58,6 +63,7 @@ const List = ({ list, setList }: any) => {
                             key={item.id}
                             className="flex items-center border-b-[1.65px] border-[#a4aad819] bg-[#39243d] first:rounded-t-md last:rounded-none last:border-none sm:border-b-[2px]"
                         >
+                            <h1 className='hidden'>Edit individual item</h1>
                             <button className="flex cursor-pointer items-center">
                                 <span className="relative mx-4 inline-block h-7 w-7 rounded-full border border-solid border-[#a4aad84d] bg-[#a4aad819] text-[#a4aad8] sm:mx-7 sm:h-10 sm:w-10"></span>
                             </button>
@@ -75,7 +81,7 @@ const List = ({ list, setList }: any) => {
                                 viewBox="0 0 24 24"
                                 strokeWidth={1.5}
                                 stroke="currentColor"
-                                className="mr-6 h-12 w-12 cursor-pointer text-[#a4aad84d] transition-all duration-300 hover:text-[#A4AAD8] sm:mr-12"
+                                className="mr-6 h-12 w-12 cursor-pointer text-[#a4aad84d] transition-all duration-300 hover:text-[#d8a4a4] sm:mr-12"
                                 onClick={() => setEditing(false)}
                             >
                                 <path
@@ -126,7 +132,7 @@ const List = ({ list, setList }: any) => {
                                 viewBox="0 0 24 24"
                                 strokeWidth={1.5}
                                 stroke="currentColor"
-                                className="mr-2 h-12 w-12 cursor-pointer text-[#a4aad84d] transition-all duration-300 hover:text-[#A4AAD8] sm:mr-3"
+                                className="mr-2 h-12 w-12 cursor-pointer text-[#a4aad84d] transition-all duration-300 hover:text-[#6ce556] sm:mr-3"
                                 onClick={(e) => handleEdit(item.id, e)}
                             >
                                 <path
@@ -142,7 +148,7 @@ const List = ({ list, setList }: any) => {
                                 viewBox="0 0 24 24"
                                 strokeWidth={1.5}
                                 stroke="currentColor"
-                                className="mr-3 h-12 w-12 cursor-pointer text-[#a4aad84d] transition-all duration-300 hover:text-[#A4AAD8] sm:mr-6"
+                                className="mr-3 h-12 w-12 cursor-pointer text-[#a4aad84d] transition-all duration-300 hover:text-[#e55656] sm:mr-6"
                                 onClick={() => handleDelete(item.id)}
                             >
                                 <path
@@ -155,6 +161,7 @@ const List = ({ list, setList }: any) => {
                     )
                 )}
             <footer className="mb-6 flex justify-between rounded-b-md bg-[#24273D] py-3 px-4 text-xs tracking-widest text-[#A4AAD8] sm:py-5 sm:text-sm">
+                <h1 className='hidden'>Todo Details and Clear all list items</h1>
                 <p>
                     {listQuantity} {listQuantity === 1 ? 'item' : 'items'}
                 </p>
@@ -162,7 +169,7 @@ const List = ({ list, setList }: any) => {
                     Clear {listQuantity === 1 ? 'item' : 'items'}
                 </p>
             </footer>
-        </div>
+        </section>
     );
 };
 
