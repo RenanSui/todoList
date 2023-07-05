@@ -1,11 +1,6 @@
-// packages
+import { editItemCheck, editLocalStorage, getLocalStorage, removeFromLocalStorage } from '@/app/_actions/todo';
 import React, { useRef, useState } from 'react';
 
-// components
-import removeFromLocalStorage from '../removeFromLocalStorage';
-import editLocalStorage from '../editLocalStorage';
-import getLocalStorage from '../getLocalStorage';
-import editItemCheck from '../editItemCheck';
 
 
 const List = ({ list, setList }: any) => {

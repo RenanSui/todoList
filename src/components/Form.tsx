@@ -1,9 +1,5 @@
-// packages
+import { addToLocalStorage, getLocalStorage } from '@/app/_actions/todo';
 import { useRef, useState } from 'react';
-
-// components
-import addToLocalStorage from '../addToLocalStorage';
-import getLocalStorage from '../getLocalStorage';
 
 const Form = ({ setList }: any) => {
     const inputValueRef = useRef<HTMLInputElement>(null);

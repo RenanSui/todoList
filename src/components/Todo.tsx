@@ -1,9 +1,7 @@
-// packages
-import { useEffect, useState } from 'react';
+'use client'
 
-// components
-import getLocalStorage from '../getLocalStorage';
-import { Header } from '../utils/Header';
+import { getLocalStorage } from '@/app/_actions/todo';
+import { useEffect, useState } from 'react';
 import Form from './Form';
 import List from './List';
 
@@ -19,7 +17,6 @@ const Todo = () => {
 
     return (
         <>
-            <Header />
             <header className="text-white transition-all duration-500 sm:m-auto sm:mt-52 sm:max-w-[640px] ">
                 <h1 className="ml-6 mt-6 font-lato text-4xl font-semibold tracking-widest sm:ml-4 sm:text-6xl">
                     TODO
