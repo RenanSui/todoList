@@ -1,4 +1,5 @@
 
+import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { ReactNode } from 'react'
 import '../styles/globals.css'
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html lang="en">
 			<body className="font-lato">
 					{children}
+					<TailwindIndicator />
 			</body>
 		</html>
 	)
